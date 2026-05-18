@@ -1,8 +1,7 @@
 import streamlit as st
-import pickle
 import numpy as np
 from tensorflow.keras.models import load_model
-model = load_model("model.keras")
+model = load_model("model.h5")
 st.title("Bank Customer Churn Prediction")
 st.write("Enter customer details:")
 credit_score = st.number_input("Credit Score", 300, 900, 600)
@@ -19,7 +18,7 @@ germany = 1 if country == "Germany" else 0
 spain = 1 if country == "Spain" else 0
 male = 1 if gender == "Male" else 0
 if st.button("Predict"):
-    features = np.array([[
+    features = np.array([[ 
         credit_score,
         age,
         tenure,
@@ -33,7 +32,9 @@ if st.button("Predict"):
         male
     ]])
     prediction = model.predict(features)
-    if prediction[0] == 1:
+    probability = prediction[0][0]
+    st.write(f"Churn Probability: {probability:.2f}")
+    if probability > 0.5:
         st.error("Customer is likely to Exit")
     else:
         st.success("Customer is likely to Stay")
