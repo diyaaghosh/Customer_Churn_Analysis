@@ -1,7 +1,8 @@
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
-model = load_model("model.h5")
+
+model = load_model("model.h5", compile=False)
 print("MODEL LOADED SUCCESSFULLY")
 st.title("Bank Customer Churn Prediction")
 st.write("Enter customer details:")
