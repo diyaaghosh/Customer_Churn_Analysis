@@ -71,7 +71,7 @@ This project was inspired by the machine learning tutorials and concepts explain
 ##  How to Run
 
 ```bash
-git clone <repository-link>
+git clone https://github.com/diyaaghosh/Customer_Churn_Analysis.git
 cd Customer_Churn_Analysis
 pip install -r requirements.txt
 python app.py
@@ -91,6 +91,4 @@ The application provides:
 ---
 
 
-## 📜 License
 
-This project is for educational and learning purposes.
