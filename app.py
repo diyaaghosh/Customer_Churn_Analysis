@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import numpy as np
 from tensorflow.keras.models import load_model
-model = load_model("model.h5")
+model = load_model("model.keras")
 st.title("Bank Customer Churn Prediction")
 st.write("Enter customer details:")
 credit_score = st.number_input("Credit Score", 300, 900, 600)
